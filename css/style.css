@@ -1,0 +1,22 @@
+:root{
+    --white: #FFFFFF;
+    --black: #000000;
+    --green: #009688;
+    --light-grey: #DBDBD3; 
+}
+
+body{
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(to bottom, var(--green) 15%, var(--light-grey) 15% 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#app{
+    display: flex;
+    width: 80%;
+    height: 90%;
+    background-color: var(--white);
+}

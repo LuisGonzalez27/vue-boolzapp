@@ -5,6 +5,7 @@ createApp({
         return{
             contacts: [
                 {
+                    id: 1,
                     name: 'Michele',
                     avatar: '_1',
                     visible: true,
@@ -27,6 +28,7 @@ createApp({
                     ],
                 },
                 {
+                    id: 2,
                     name: 'Fabio',
                     avatar: '_2',
                     visible: true,
@@ -49,6 +51,7 @@ createApp({
                     ],
                 },
                 {
+                    id: 3,
                     name: 'Samuele',
                     avatar: '_3',
                     visible: true,
@@ -71,6 +74,7 @@ createApp({
                     ],
                 },
                 {
+                    id: 4,
                     name: 'Alessandro B.',
                     avatar: '_4',
                     visible: true,
@@ -88,6 +92,7 @@ createApp({
                     ],
                 },
                 {
+                    id: 5,
                     name: 'Alessandro L.',
                     avatar: '_5',
                     visible: true, 
@@ -105,6 +110,7 @@ createApp({
                     ],
                 },
                 {
+                    id: 6,
                     name: 'Claudia',
                     avatar: '_6',
                     visible: true,
@@ -124,6 +130,7 @@ createApp({
                     ],
                 },
                 {
+                    id: 7,
                     name: 'Federico',
                     avatar: '_7',
                     visible: true,
@@ -141,6 +148,7 @@ createApp({
                     ],
                 },
                 {
+                    id: 8,
                     name: 'Davide',
                     avatar: '_8',
                     visible: true,
