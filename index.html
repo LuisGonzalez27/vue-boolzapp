@@ -17,7 +17,53 @@
 </head>
 <body>
     <div id="app">
-
+        <!-- left-section -->
+        <div id="left-section">
+            <!-- user nav -->
+            <div id="user-nav" class="d-flex justify-content-between align-items-center">
+                <div>
+                    <img class="profile-user" src="./img/avatar_io.jpg" alt="user-avatar">
+                    <span>{{user.name}}</span>
+                </div>
+                <div class="d-flex nav-icons">
+                    <i class="fa-solid fa-circle-notch fa-lg me-3"></i>
+                    <i class="fa-solid fa-message fa-lg me-3"></i>
+                    <i class="fa-solid fa-ellipsis-vertical fa-lg"></i>
+                </div>
+            </div>
+            <!-- notifications -->
+            <div class="notifications">
+                <div class="bell-background d-flex justify-content-center align-items-center">
+                    <i class="fa-solid fa-bell-slash fa-xl"></i>
+                </div>
+                <div class="ms-3">
+                    <div>Ricevi notifiche di nuovi messaggi</div>
+                    <a href="#">Attiva le notifiche desktop</a>
+                </div>
+            </div>
+            <!-- search for contacts -->
+            <div id="search" class="d-flex">
+                <div class="glass text-center">
+                    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+                </div>
+                <input class="search-contacts" type="text" placeholder="Cerca o inizia una nuova chat">
+            </div>
+             <!-- contact list -->
+            <div class="contact-list">
+                <div class="box-list d-flex px-4 py-2" v-for="(object, index) in contacts" :key="index">
+                    <div>
+                        <img :src="`./img/avatar${object.avatar}.jpg`" alt="" class="profile-user">
+                    </div>
+                    <span>
+                        <p class="mb-0">{{object.name}}</p>
+                        <p>Ultimo messaggio inviato</p>
+                    </span>
+                </div>
+            </div>
+            
+        </div>
+        <!-- right-section -->
+        <div id="right-section"></div>
     </div>
 
     <script src="./js/script.js"></script>
