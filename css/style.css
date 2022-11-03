@@ -101,7 +101,7 @@ body{
     overflow-y: scroll;
 }
 .box-list{
-    width: 100%;
+    cursor: pointer;
 }
 /* RIGHT-SECTION */
 #contact-nav{

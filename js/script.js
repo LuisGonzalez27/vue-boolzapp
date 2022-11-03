@@ -4,6 +4,7 @@ createApp({
     data(){
         return{
             activeIndex: 0,
+            newMessage: '',
             user: {
                 name: "Sofia",
                 avatar: "_user"
@@ -183,6 +184,25 @@ createApp({
             this.activeIndex = this.contacts.findIndex((object)=> {
                 return id === object.id;
             });
+        },
+        sendMessage(){
+            if(!this.newMessage) return;
+            const messageContent = {
+                // date:
+                message: this.newMessage,
+                status: 'sent'
+            }
+            this.contacts[this.activeIndex].messages.push(messageContent);
+            this.newMessage = '';
+
+            setTimeout(()=> {
+                const replyMessage = {
+                    // date:
+                    message: 'ok',
+                    status: 'received'
+                }
+                this.contacts[this.activeIndex].messages.push(replyMessage);
+            },1000)
         }
     },
 }).mount('#app');
