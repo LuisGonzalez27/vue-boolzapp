@@ -5,6 +5,7 @@ createApp({
         return{
             activeIndex: 0,
             newMessage: '',
+            contactSearch: '',
             user: {
                 name: "Sofia",
                 avatar: "_user"
@@ -205,4 +206,12 @@ createApp({
             },1000)
         }
     },
+    computed: {
+        filteredContacts(){
+            return this.contacts.filter((item)=>{
+                const newArray = item.name.toLowerCase();
+                return newArray.includes(this.contactSearch.toLowerCase());
+            })
+        }
+    }
 }).mount('#app');

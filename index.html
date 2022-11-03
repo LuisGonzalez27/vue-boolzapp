@@ -46,12 +46,12 @@
                 <div class="glass text-center">
                     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
                 </div>
-                <input class="search-contacts" type="text" placeholder="Cerca o inizia una nuova chat">
+                <input class="search-contacts" type="text" placeholder="Cerca o inizia una nuova chat" v-model.trim="contactSearch">
             </div>
             <!-- Contact list -->
             <div class="contact-list">
                 <ul class="list-unstyled">
-                    <li v-for="(object, id) in contacts" :key="id" @click="activeContact(object.id)">
+                    <li v-for="(object, id) in filteredContacts" :key="id" @click="activeContact(object.id)">
                         <div class="box-list d-flex px-4 py-2" :class="id == activeIndex ? 'active' : ''">
                             <img :src="`./img/avatar${object.avatar}.jpg`" :alt="object.name" class="profile-user">
                             <span>
@@ -88,7 +88,7 @@
             <!-- Input box -->
             <div class="input-box d-flex justify-content-between align-items-center">
                 <i class="fa-regular fa-face-smile fa-lg"></i>
-                <input class="msg-input" type="text" placeholder="Scrivi un messaggio" v-model="newMessage" @keyup.enter="sendMessage">
+                <input class="msg-input" type="text" placeholder="Scrivi un messaggio" v-model.trim="newMessage" @keyup.enter="sendMessage">
                 <i class="fa-solid fa-microphone fa-lg"></i>
             </div>
 

@@ -31,14 +31,12 @@ body{
     height: 100%;
     width: 30%;
     min-width: 500px;
-    background-color: red;
 }
 
 #right-section {
     height: 100%;
     width: 70%;
     min-width: 500px;
-    background-color: blue;
     border-left: 1px solid var(--light-grey);
 }
 
