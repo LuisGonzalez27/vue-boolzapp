@@ -63,7 +63,39 @@
             
         </div>
         <!-- right-section -->
-        <div id="right-section"></div>
+        <div id="right-section">
+            <!-- contact nav -->
+            <div id="contact-nav" class="d-flex justify-content-between align-items-center">
+                <div>
+                    <img class="profile-user" src="./img/avatar_io.jpg" alt="user-avatar">
+                    <span>{{user.name}}</span>
+                </div>
+                <div class="d-flex nav-icons">
+                    <i class="fa-solid fa-magnifying-glass fa-lg me-3"></i>
+                    <i class="fa-solid fa-paperclip fa-lg me-3"></i>
+                    <i class="fa-solid fa-ellipsis-vertical fa-lg"></i>
+                </div>
+            </div>
+
+            <div class="message-box d-flex flex-column">
+                <div class="send-msg">
+                    test 1
+                </div>
+                <div class="send-msg">
+                    test 1
+                </div>
+                <div class="received-msg">
+                    test 2
+                </div>
+            </div>
+
+            <div class="input-box d-flex justify-content-between align-items-center">
+                <i class="fa-regular fa-face-smile fa-lg"></i>
+                <input class="msg-input" type="text" placeholder="Scrivi un messaggio">
+                <i class="fa-solid fa-microphone fa-lg"></i>
+            </div>
+
+        </div>
     </div>
 
     <script src="./js/script.js"></script>
