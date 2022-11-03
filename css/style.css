@@ -8,6 +8,7 @@
     --light-blue: #8EDAFC;
     --msg-send: #D5F9BA;
     --box-msg: #F3EEEA;
+    --active-contact: #E9EBEB;
 }
 
 body{
@@ -117,20 +118,18 @@ body{
     padding: 50px 70px;
     overflow-y: scroll;
 }
-.send-msg{
+.msg{
     width: 400px;
     padding: 10px 10px;
-    align-self: flex-end;
-    background-color: var(--msg-send);
     border-radius: 10px;
     margin-bottom: 10px;
 }
-.received-msg{
-    width: 400px;
-    padding: 10px 10px;
+.sent{
+    align-self: flex-end;
+    background-color: var(--msg-send);
+}
+.received{
     background-color: var(--white);
-    border-radius: 10px;
-    margin-bottom: 10px;
 }
 .input-box{
     width: 100%;
@@ -146,4 +145,8 @@ body{
     border: 1px solid var(--icons-grey);
     background-color: var(--white);
     border-radius: 10px;
+}
+
+.active {
+    background-color: var(--active-contact);
 }

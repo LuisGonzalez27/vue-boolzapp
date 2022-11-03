@@ -3,6 +3,7 @@ const {createApp} = Vue
 createApp({
     data(){
         return{
+            activeIndex: 0,
             user: {
                 name: "Sofia",
                 avatar: "_user"
@@ -178,6 +179,10 @@ createApp({
         }
     },
     methods:{
-
+        activeContact(id){
+            this.activeIndex = this.contacts.findIndex((object)=> {
+                return id === object.id;
+            });
+        }
     },
 }).mount('#app');
