@@ -188,8 +188,10 @@ createApp({
         },
         sendMessage(){
             if(!this.newMessage) return;
+            const sendDate = new Date();
+            let newDate = sendDate.toDateString();
             const messageContent = {
-                // date:
+                date: newDate,
                 message: this.newMessage,
                 status: 'sent'
             }
@@ -197,8 +199,10 @@ createApp({
             this.newMessage = '';
 
             setTimeout(()=> {
+                const sendDate = new Date();
+                let newDate = sendDate.toDateString();
                 const replyMessage = {
-                    // date:
+                    date: newDate,
                     message: 'ok',
                     status: 'received'
                 }
