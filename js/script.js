@@ -188,10 +188,10 @@ createApp({
         },
         sendMessage(){
             if(!this.newMessage) return;
-            const sendDate = new Date();
-            let newDate = sendDate.toDateString();
+            let options = {hour: '2-digit', minute: '2-digit'};
+            const today  = new Date().toLocaleTimeString("it-IT", options);
             const messageContent = {
-                date: newDate,
+                date: today,
                 message: this.newMessage,
                 status: 'sent'
             }
@@ -199,10 +199,10 @@ createApp({
             this.newMessage = '';
 
             setTimeout(()=> {
-                const sendDate = new Date();
-                let newDate = sendDate.toDateString();
+                let options = {hour: '2-digit', minute: '2-digit'};
+                const today  = new Date().toLocaleTimeString("it-IT", options);
                 const replyMessage = {
-                    date: newDate,
+                    date: today,
                     message: 'ok',
                     status: 'received'
                 }
