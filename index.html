@@ -23,7 +23,7 @@
             <div id="user-nav" class="d-flex justify-content-between align-items-center">
                 <div>
                     <img class="profile-user" src="./img/avatar_io.jpg" alt="user-avatar">
-                    <span>{{user.name}}</span>
+                    <span  class="fw-semibold">{{user.name}}</span>
                 </div>
                 <div class="d-flex nav-icons">
                     <i class="fa-solid fa-circle-notch fa-lg me-3"></i>
@@ -52,13 +52,19 @@
             <div class="contact-list">
                 <ul class="list-unstyled">
                     <li v-for="(object, id) in filteredContacts" :key="id" @click="activeContact(object.id)">
-                        <div class="box-list d-flex px-4 py-2" :class="id == activeIndex ? 'active' : ''">
-                            <img :src="`./img/avatar${object.avatar}.jpg`" :alt="object.name" class="profile-user">
-                            <span>
-                                <p class="mb-0">{{object.name}}</p>
-                                <p>Ultimo messaggio inviato</p>
-                            </span>
-                        </div>    
+                        <div class="box-list d-flex px-4 py-2 justify-content-between" 
+                        :class="id == activeIndex ? 'active' : ''">
+                            <div class="d-flex justify-content-start align-items-center">
+                                <img :src="`./img/avatar${object.avatar}.jpg`" :alt="object.name" class="profile-user">
+                                <div>
+                                    <div class="fw-semibold">{{object.name}}</div>
+                                    <div class="last-msg-box">{{printLastMsg(object).message}}</div>
+                                </div>
+                            </div>
+                            <div>
+                                {{printLastMsg(object).date}}
+                            </div>
+                        </div>
                     </li>
                 </ul>
             </div>
@@ -68,10 +74,17 @@
         <div id="right-section">
             <!-- contact nav -->
             <div id="contact-nav" class="d-flex justify-content-between align-items-center">
-                <div>
+                <div class="d-flex justify-content-start align-items-center">
                     <img class="profile-user" :src="`./img/avatar${contacts[activeIndex].avatar}.jpg`" 
                     alt="contacts[activeIndex].name">
-                    <span>{{contacts[activeIndex].name}}</span>
+                    <div>
+                        <div class="fw-semibold">
+                            {{contacts[activeIndex].name}}
+                        </div>
+                        <div class="last-msg-box">
+                            Ultimo accesso {{printLastLogin(contacts ,activeIndex).date}}
+                        </div>
+                    </div>
                 </div>
                 <div class="d-flex nav-icons">
                     <i class="fa-solid fa-magnifying-glass fa-lg me-3"></i>
@@ -81,8 +94,10 @@
             </div>
             <!-- Message box -->
             <div class="message-box d-flex flex-column">
-                <div class="msg" v-for="(object, index) in contacts[activeIndex].messages" :key="index" :class="object.status == 'sent' ? 'sent' : 'received'">
-                    {{contacts[activeIndex].messages[index].message}}
+                <div class="msg" v-for="(object, index) in contacts[activeIndex].messages" :key="index" 
+                :class="object.status == 'sent' ? 'sent' : 'received'">
+                    {{object.message}}
+                    <span class="msg-date">{{object.date}}</span>
                 </div>
             </div>
             <!-- Input box -->

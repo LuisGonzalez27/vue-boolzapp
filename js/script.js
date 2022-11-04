@@ -182,8 +182,8 @@ createApp({
     },
     methods:{
         activeContact(id){
-            this.activeIndex = this.contacts.findIndex((object)=> {
-                return id === object.id;
+            this.activeIndex = this.contacts.findIndex((contacts)=> {
+                return id === contacts.id;
             });
         },
         sendMessage(){
@@ -204,7 +204,19 @@ createApp({
                 }
                 this.contacts[this.activeIndex].messages.push(replyMessage);
             },1000)
-        }
+        },
+        printLastMsg(object){
+            const msg = object.messages.filter((message)=> {
+                return message.status == 'received';
+            });
+            return msg[msg.length -1];
+        },
+        printLastLogin(contacts, activeIndex){
+            const lastLogin = contacts[activeIndex].messages.filter((message)=> {
+                return message.status == 'received';
+             });
+             return lastLogin[lastLogin.length -1];
+        },
     },
     computed: {
         filteredContacts(){

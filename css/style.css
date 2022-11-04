@@ -101,6 +101,10 @@ body{
 .box-list{
     cursor: pointer;
 }
+.last-msg-box{
+    font-size: 12px;
+    color: #6B7376;
+}
 /* RIGHT-SECTION */
 #contact-nav{
     width: 100%;
@@ -121,6 +125,14 @@ body{
     padding: 10px 10px;
     border-radius: 10px;
     margin-bottom: 10px;
+    position: relative;
+}
+.msg-date{
+    position: absolute;
+    right: 6px;
+    bottom: 1px;
+    font-size: 10px;
+    color: #6B7376;
 }
 .sent{
     align-self: flex-end;
