@@ -135,6 +135,11 @@ body{
     font-size: 10px;
     color: #6B7376;
 }
+.msg-delete{
+    position: absolute;
+    right: 6px;
+    top: 1px;
+}
 .sent{
     align-self: flex-end;
     background-color: var(--msg-send);

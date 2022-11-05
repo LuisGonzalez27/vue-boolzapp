@@ -221,6 +221,9 @@ createApp({
              });
              return lastLogin[lastLogin.length -1];
         },
+        deleteMsg(i){
+            this.contacts[this.activeIndex].messages.splice(i, 1);
+        },
     },
     computed: {
         filteredContacts(){

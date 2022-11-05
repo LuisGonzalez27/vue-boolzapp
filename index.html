@@ -58,11 +58,13 @@
                                 <img :src="`./img/avatar${object.avatar}.jpg`" :alt="object.name" class="profile-user">
                                 <div>
                                     <div class="fw-semibold">{{object.name}}</div>
-                                    <div class="last-msg-box">{{printLastMsg(object).message}}</div>
+                                    <div class="last-msg-box" v-if="object.messages.length > 0">
+                                        {{object.messages[object.messages.length -1].message}}
+                                    </div>
                                 </div>
                             </div>
-                            <div>
-                                {{printLastMsg(object).date}}
+                            <div class="last-msg-box" v-if="object.messages.length > 0">
+                                {{object.messages[object.messages.length -1].date}}
                             </div>
                         </div>
                     </li>
@@ -81,9 +83,9 @@
                         <div class="fw-semibold">
                             {{contacts[activeIndex].name}}
                         </div>
-                        <div class="last-msg-box">
+                        <!-- <div class="last-msg-box">
                             Ultimo accesso {{printLastLogin(contacts ,activeIndex).date}}
-                        </div>
+                        </div> -->
                     </div>
                 </div>
                 <div class="d-flex nav-icons">
@@ -98,6 +100,9 @@
                 :class="object.status == 'sent' ? 'sent' : 'received'">
                     {{object.message}}
                     <span class="msg-date">{{object.date}}</span>
+                    <span class="msg-delete" @click="deleteMsg(index)">
+                        <i class="fa-solid fa-trash"></i>
+                    </span>
                 </div>
             </div>
             <!-- Input box -->
