@@ -100,9 +100,13 @@
                 :class="object.status == 'sent' ? 'sent' : 'received'">
                     {{object.message}}
                     <span class="msg-date">{{object.date}}</span>
-                    <span class="msg-delete" @click="deleteMsg(index)">
-                        <i class="fa-solid fa-trash"></i>
-                    </span>
+                    <div class="msg-delete" @click="showInfo(index)">
+                        <i class="fa-solid fa-chevron-down"></i>
+                        <div v-if="showInfoMsg.index === index && showInfoMsg.show" class="box-info rounded-3">
+                            <div class="msg-info ps-3">Info messaggio</div>
+                            <div @click="deleteMsg(index)" class="ps-3">Cancella messaggio</div>
+                        </div>
+                    </div>
                 </div>
             </div>
             <!-- Input box -->

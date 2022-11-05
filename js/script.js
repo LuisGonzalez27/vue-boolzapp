@@ -6,6 +6,10 @@ createApp({
             activeIndex: 0,
             newMessage: '',
             contactSearch: '',
+            showInfoMsg: {
+                index: null,
+                show: false
+            },
             user: {
                 name: "Sofia",
                 avatar: "_user"
@@ -223,6 +227,16 @@ createApp({
         },
         deleteMsg(i){
             this.contacts[this.activeIndex].messages.splice(i, 1);
+        },
+        showInfo(i){
+            if(i === this.showInfoMsg.index && this.showInfoMsg.show){
+                this.showInfoMsg.index = null;
+                this.showInfoMsg.show = false;
+                }
+                else{
+                    this.showInfoMsg.index = i;
+                    this.showInfoMsg.show = true;
+                }
         },
     },
     computed: {

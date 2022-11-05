@@ -166,3 +166,25 @@ body{
 .active {
     background-color: var(--active-contact);
 }
+
+.box-info{
+    position: absolute;
+    right: 15px;
+    top: 18px;
+    height: max-content;
+    width: 200px;
+    background-color: var(--white);
+    border: 1px solid var(--black);
+    padding: 5px 0px;
+    z-index: 500;
+}
+.box-info div:hover{
+    cursor: pointer;
+    background-color: var(--active-contact);
+}
+.msg-info{
+    border-bottom: 1px solid var(--black);
+}
+.fa-caret-down:hover{
+    cursor: pointer;
+}
